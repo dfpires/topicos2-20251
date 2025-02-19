@@ -17,7 +17,8 @@ export default function Light(){
                 style={styles.image}/>
             <Switch
                 onValueChange={mudaValor} 
-                value={isEnabled}/>
+                value={isEnabled}
+                style={styles.switch}/>
         </SafeAreaView>
     )
 }
@@ -28,6 +29,13 @@ const styles = StyleSheet.create({
     },
     image: {
         width: 300,
-        height: 300
-    }
+        height: 300,
+        marginBottom: 20,
+        marginTop: 40,
+        alignSelf: "center"
+    },
+    switch: {
+        alignSelf: "center",
+        transform: [{scale: 2.0}]
+      }
 })
