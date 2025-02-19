@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
         height: 300,
         marginBottom: 20,
         marginTop: 40,
-        alignSelf: "center"
+        alignSelf: "center",
+        borderRadius: 20
     },
     switch: {
         alignSelf: "center",
