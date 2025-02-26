@@ -6,7 +6,7 @@ export default function Login(){
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
                 <View>
-                    <Text style={styles.mensagens}> Olá </Text> 
+                    <Text style={[styles.mensagens, {marginTop: 30}]}> Olá </Text> 
                     <Text style={styles.mensagens}> Pedro de Paula </Text>
                     <Text style={styles.mensagens}> Seja bem-vindo </Text>
                 </View>
@@ -15,7 +15,7 @@ export default function Login(){
                     <TextInput style={styles.caixa} placeholder="Digite a senha"
                                 secureTextEntry={true} autoFocus={true}/>
                     <TouchableOpacity style={styles.botaoLogin}>
-                        <Text> Entrar </Text>
+                        <Text style={styles.textoBotaoLogin}> Entrar </Text>
                     </TouchableOpacity>
                 </View>
                 <View>
@@ -41,12 +41,13 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30
     },
     mensagens: {
-        marginTop: 30,
+        marginTop: 10,
         color: "white",
         textAlign: "center"
     },
     form: {
-        marginBottom: 30
+        marginBottom: 30,
+        marginTop: 30
     },
     icon: {
         color: "#929292",
@@ -72,5 +73,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#8d015a",
         justifyContent: "center",
         marginTop: 15
+    },
+    textoBotaoLogin: {
+        color: "#fff",
+        textAlign: "center"
     }
 })
