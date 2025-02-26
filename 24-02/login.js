@@ -18,12 +18,12 @@ export default function Login(){
                         <Text style={styles.textoBotaoLogin}> Entrar </Text>
                     </TouchableOpacity>
                 </View>
-                <View>
+                <View style={styles.acoes}>
                     <TouchableOpacity>
-                        <Text> Esqueceu a senha </Text>
+                        <Text style={styles.textoBotao}> Esqueceu a senha </Text>
                     </TouchableOpacity>
                     <TouchableOpacity>
-                        <Text> Criar conta </Text>
+                        <Text style={styles.textoBotao}> Criar conta </Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -77,5 +77,15 @@ const styles = StyleSheet.create({
     textoBotaoLogin: {
         color: "#fff",
         textAlign: "center"
+    },
+    acoes: {
+        flexDirection: "row",
+        justifyContent: "space-between"
+    },
+    textoBotao: {
+        color: "#fff",
+        textAlign: "center",
+        fontSize: 16,
+        lineHeight: 30
     }
 })
