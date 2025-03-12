@@ -26,9 +26,11 @@ export default function Facebook(){
                 </View>
                 <View style={styles.footer}>
                     <View style={styles.divider}>
-
+                        <View style={styles.dividerLine}/> 
                     </View>
-                    <TouchableOpacity> </TouchableOpacity>
+                    <TouchableOpacity style={[styles.button, styles.register]}> 
+                        Criar uma nova conta
+                    </TouchableOpacity>
                 </View>
             </SafeAreaView>       
         </>
@@ -46,7 +48,8 @@ const styles = StyleSheet.create({
         color: "#333333",
         fontSize: 16,
         height: 44,
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
+        marginVertical: 20
     },
     button: {
         height: 42,
@@ -59,5 +62,25 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "white"
+    },
+    footer: {
+        alignItems: "center",
+        padding: 22,
+        paddingBottom: 0
+    },
+    divider: {
+        flexDirection: "row",
+        alignItems: "center",
+        width: "70%",
+        marginBottom: 10
+    },
+    dividerLine: {
+        flex: 1,
+        borderBottomWidth: 1,
+        borderColor: "#cdccd0",
+        
+    },
+    register: {
+        width: "100%"
     }
 })
