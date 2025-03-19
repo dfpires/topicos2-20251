@@ -6,14 +6,17 @@ import { validationSchema } from "./validation"
 // componente visual que retorna uma View com o erro
 const ErrorMessage = ({errorValue}) => {
   return errorValue ? (
-    <View>
-      <Text> {errorValue} </Text>
+    <View style={styles.errorContainer}>
+      <Text style={styles.errorText}> {errorValue} </Text>
     </View>
   ) : 
   null
 }
 
 export default function Registro(){
+    function onSubmitHandler(values) {
+      console.log(values)
+    }
     return (
         <>
           <SafeAreaView style={styles.topSafeArea}/>
@@ -29,9 +32,13 @@ export default function Registro(){
                   password: "",
                   confirmPassword: ""
               }}
+              onSubmit={(values, actions) => {
+                onSubmitHandler(values, actions)
+              }}
               validationSchema={validationSchema}
               >
               {({
+                handleSubmit,
                 handleChange,
                 values,
                 errors,
@@ -39,38 +46,40 @@ export default function Registro(){
                 handleBlur,
               }) => (
               <KeyboardAwareScrollView>
-                <View>
-                  <Text> First Name </Text>
-                  <TextInput value={values.firstName} onChangeText={handleChange("firstName")}
+                <View style={styles.formGroup}>
+                  <Text style={styles.label}> First Name </Text>
+                  <TextInput style={styles.input} value={values.firstName} onChangeText={handleChange("firstName")}
                             onBlur={handleBlur("firstName")}/>
                   <ErrorMessage errorValue={touched.firstName && errors.firstName}/>
                 </View>
-                <View>
-                  <Text> Last Name </Text>
-                  <TextInput value={values.lastName} onChangeText={handleChange("lastName")}/>
+                <View style={styles.formGroup}>
+                  <Text style={styles.label}> Last Name </Text>
+                  <TextInput style={styles.input} value={values.lastName} onChangeText={handleChange("lastName")}/>
                 </View> 
-                <View>
-                  <Text> Email </Text>
-                  <TextInput value={values.email} onChangeText={handleChange("email")}
+                <View style={styles.formGroup}>
+                  <Text style={styles.label}> Email </Text>
+                  <TextInput style={styles.input}  value={values.email} onChangeText={handleChange("email")}
                             onBlur={handleBlur("email")}/>
                   <ErrorMessage errorValue={touched.email && errors.email}/>
                 </View> 
-                <View>
-                  <Text> Password </Text>
-                  <TextInput value={values.password} onChangeText={handleChange("password")}
-                            onBlur={handleBlur("password")}/>
+                <View style={styles.formGroup}>
+                  <Text style={styles.label}> Password </Text>
+                  <TextInput style={styles.input} value={values.password} onChangeText={handleChange("password")}
+                            onBlur={handleBlur("password")}
+                            secureTextEntry={true}/>
                   <ErrorMessage errorValue={touched.password && errors.password}/>
                 </View>  
-                <View>
-                  <Text> Confirm Password </Text>
-                  <TextInput value={values.confirmPassword} 
+                <View style={styles.formGroup}>
+                  <Text style={styles.label}> Confirm Password </Text>
+                  <TextInput style={styles.input} value={values.confirmPassword} 
                       onChangeText={handleChange("confirmPassword")}
                       onBlur={handleBlur("confirmPassword")}
+                      secureTextEntry={true}
                   />
                   <ErrorMessage errorValue={touched.confirmPassword && errors.confirmPassword}/>
                 </View>
-                <TouchableOpacity>
-                  <Text> SUBMIT </Text>
+                <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                  <Text style={styles.buttonText}> SUBMIT </Text>
                 </TouchableOpacity>
               </KeyboardAwareScrollView>
               )}
