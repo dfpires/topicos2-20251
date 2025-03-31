@@ -2,10 +2,22 @@ import {SafeAreaView, View, FlatList, TouchableOpacity, Image, StyleSheet} from 
 import {Feather} from "@expo/vector-icons"
 import Constants from "expo-constants"
 import data from './data'
+import Stories from './Stories'
     const INSTAGRAM_LOGO =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png";
 
 export default function Instagram(){
+    function renderItem({item, index}){
+        if (index === 0){ // é o primeiro
+            return (
+                <>
+                    <View>
+                        <Stories stories={data.stories} profile={data.profile}/>
+                    </View>
+                </>
+            )
+        }
+    }
     
     return ( 
         <SafeAreaView style={styles.container}>
