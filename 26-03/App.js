@@ -1,10 +1,12 @@
 import {SafeAreaView, View, FlatList, TouchableOpacity, Image, StyleSheet} from "react-native"
 import {Feather} from "@expo/vector-icons"
 import Constants from "expo-constants"
-export default function Instagram(){
+import data from './data'
     const INSTAGRAM_LOGO =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png";
 
+export default function Instagram(){
+    
     return ( 
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
@@ -16,7 +18,11 @@ export default function Instagram(){
                     <Feather name="send" size={24}/>
                 </TouchableOpacity>
             </View>
-            <FlatList/>
+            <FlatList 
+                data={data.articles}
+                renderItem={renderItem}
+                keyExtractor={ (item) => item.id.toString()}
+                showsVerticalScrollIndicator={false}/>
         </SafeAreaView>
     )
 }
