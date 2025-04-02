@@ -17,7 +17,7 @@ export default function Story({avatar, name, isCreateStory = false, isSeen}){
                         )
                     }
                 </View>
-                <Text numberOfLines={1}>
+                <Text style={styles.name} numberOfLines={1}>
                     {name}
                 </Text>
             </View>
@@ -26,6 +26,13 @@ export default function Story({avatar, name, isCreateStory = false, isSeen}){
     )
 }
 const styles = StyleSheet.create({
+    name: {
+        textAlign: "center",
+        fontSize: 10,
+        lineHeight: 14,
+        color: "#262626",
+        maxWidth: 64
+    },
     user: {
         width: 80,
         paddingHorizonta: 4
