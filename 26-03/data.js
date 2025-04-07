@@ -29,7 +29,7 @@ const data = {
       name: "5.min.craft",
       image: require("./assets/img1.jpg"),
       viewCount: "685,357",
-      date: "1 giờ trước",
+      date: "1 dia atrás",
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const data = {
       name: "5.min.craft",
       image: require("./assets/img2.jpg"),
       viewCount: "1,356",
-      date: "3 giờ trước",
+      date: "3 dias atrás",
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ const data = {
       name: "thangflycomicsoffical",
       image: require("./assets/img3.jpg"),
       viewCount: "322,555,432",
-      date: "8 giờ trước",
+      date: "8 dias atrás",
     },
     {
       id: 4,
@@ -53,7 +53,7 @@ const data = {
       name: "teammonsterbox",
       image: require("./assets/img4.jpg"),
       viewCount: "198",
-      date: "1 ngày trước",
+      date: "1 dia atrás",
     },
     {
       id: 5,
@@ -61,7 +61,7 @@ const data = {
       name: "teammonsterbox",
       image: require("./assets/img5.jpg"),
       viewCount: "123,357",
-      date: "2 ngày trước",
+      date: "2 dias atrás",
     },
   ],
 };

@@ -3,19 +3,25 @@ import {Feather} from "@expo/vector-icons"
 import Constants from "expo-constants"
 import data from './data'
 import Stories from './Stories'
+import Article from './Article'
     const INSTAGRAM_LOGO =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png";
 
 export default function Instagram(){
+    // função será chamada para cada article
     function renderItem({item, index}){
-        if (index === 0){ // é o primeiro
+        if (index === 0){ // é o primeiro article
             return (
                 <>
                     <View>
                         <Stories stories={data.stories} profile={data.profile}/>
                     </View>
+                    <Article item={item}/> 
                 </>
             )
+        }
+        else {
+            return <Article item={item} /> // demais articles
         }
     }
     
