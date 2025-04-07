@@ -35,6 +35,10 @@ export default function Article({item}){
                     </TouchableOpacity>
                 </View>
             </View>
+            <View style={styles.info}>
+                <Text style={styles.viewCount}> {item.viewCount} views </Text>
+                <Text style={styles.date}> {item.date} </Text>
+            </View>
         </View>
     )
 }
@@ -66,8 +70,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: null,
         aspectRatio: 1,
-        resizeMode: "contain",
-        backgroundColor: "red",
+        resizeMode: "cover",
         margin: 0,
         padding: 0
     },
@@ -81,6 +84,22 @@ const styles = StyleSheet.create({
     actionLeft: {
         flexDirection: "row",
         alignItems: "center",
+    },
+    actionButton: {
+        padding: 8
+    },
+    info: {
+        paddingHorizontal: 16
+    },
+    viewCount: {
+        color: "#262626",
+        fontWeight: "bold",
+        marginBottom: 8
+    },
+    date: {
+        color: "#8e8e8e",
+        fontSize: 10,
+        marginBottom: 5
     }
 
 })
