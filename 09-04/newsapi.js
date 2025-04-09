@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react"
 import {SafeAreaView, View, Text, FlatList} from "react-native"
 import { getNews } from "./api"
+import Article from "./Article"
 
 export default function NewsApi(){
     // guarda os artigos
@@ -15,7 +16,7 @@ export default function NewsApi(){
         fetchData() // consumir a API
     })
 
-    const renderArticle = ({item}) => <Text> {item.title} </Text>
+    const renderArticle = ({item}) => <Article item={item}/>
     return (
         <SafeAreaView>
             <View>
