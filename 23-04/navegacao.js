@@ -14,10 +14,10 @@ function HomeScreen({navigation}) {
                 navigation.navigate('Cafe', {tipo: 'Bourbon', sabor: 'caramelo'})
             }/>
             <Button title="Chocolate" onPress={() => 
-                navigation.navigate('Chocolate')
+                navigation.navigate('Chocolate', {tipo: 'Suiço', sabor: 'Meio Amargo'})
             }/>
             <Button title="Chá" onPress={() => 
-                navigation.navigate('Cha')
+                navigation.navigate('Cha', {tipo: 'Sachê', sabor: 'Erva Sidreira'})
             }/>
         </View>
     )
@@ -35,19 +35,25 @@ function CafeScreen({route, navigation}){
     )
 }
 // componente ChocolateScreen
-function ChocolateScreen({navigation}){
+function ChocolateScreen({route, navigation}){
+    const {tipo, sabor} = route.params
     return (
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Text> Tela dos detalhes do Chocolate </Text>
+            <Text> Tipo: {tipo} </Text>
+            <Text> Sabor: {sabor} </Text>
             <Button title="Voltar" onPress={() => navigation.goBack()}/>
         </View>
     )
 }
 // componente ChaScreen
-function ChaScreen({navigation}){
+function ChaScreen({route, navigation}){
+    const {tipo, sabor} = route.params
     return (
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Text> Tela dos detalhes do Chá </Text>
+            <Text> Tipo: {tipo} </Text>
+            <Text> Sabor: {sabor} </Text>
             <Button title="Voltar" onPress={() => navigation.goBack()}/>
         </View>
     )
