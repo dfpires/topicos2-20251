@@ -1,5 +1,5 @@
 import {useState} from "react"
-import {View, Text, TextInput, Button, Alert} from "react-native"
+import {View, Text, TextInput, Button, Alert, StyleSheet} from "react-native"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 export default function App(){
     const [nome, setNome] = useState('')
@@ -30,7 +30,7 @@ export default function App(){
         }
     }
     return (
-        <View>
+        <View style={styles.container}>
             <Text> Digite seu nome: </Text>
             <TextInput value={nome} onChangeText={setNome} placeholder="Ex: Pedro"/>
             <View>
@@ -45,3 +45,10 @@ export default function App(){
         </View>
     )
 }
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        padding: 20
+    }
+})
